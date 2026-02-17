@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#090D16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1120"/>
+      <stop offset="50%" stop-color="#090D16"/>
+      <stop offset="100%" stop-color="#040711"/>
+    </linearGradient>
+    
+    <linearGradient id="primaryCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9"/>
+    </linearGradient>
+    
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <linearGradient id="amberGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Marker Arrow -->
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#38BDF8"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#10B981"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#A855F7"/>
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="680" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.04" stroke="#FFFFFF" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40"/>
+    </pattern>
+    <rect width="1200" height="680" fill="url(#grid)"/>
+  </g>
+
+  <!-- Title & Header Bar -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="4" height="38" rx="2" fill="url(#cyanGlow)"/>
+    <text x="16" y="24" fill="#F8FAFC" font-size="24" font-weight="700" letter-spacing="-0.5">Enterprise LLM Gateway Architecture</text>
+    <text x="16" y="44" fill="#94A3B8" font-size="13" font-weight="400">High-Performance Two-Pass Semantic Caching, Circuit-Breaker Failover &amp; Cost Governance</text>
+    
+    <!-- Badges -->
+    <rect x="880" y="10" width="95" height="24" rx="12" fill="#0369A1" fill-opacity="0.3" stroke="#38BDF8" stroke-width="1"/>
+    <text x="927" y="26" fill="#38BDF8" font-size="11" font-weight="600" text-anchor="middle">SUB-10MS CACHE</text>
+    
+    <rect x="985" y="10" width="95" height="24" rx="12" fill="#047857" fill-opacity="0.3" stroke="#10B981" stroke-width="1"/>
+    <text x="1032" y="26" fill="#34D399" font-size="11" font-weight="600" text-anchor="middle">188/188 TESTS</text>
+  </g>
+
+  <!-- Horizontal Connection Lines (Bus) -->
+  <g stroke="#334155" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <path d="M 230 330 L 320 330"/>
+    <path d="M 580 250 L 660 250"/>
+    <path d="M 580 410 L 660 410"/>
+    <path d="M 910 250 L 980 250"/>
+    <path d="M 910 410 L 980 410"/>
+  </g>
+
+  <!-- COLUMN 1: INGRESS & SECURITY LAYER -->
+  <g transform="translate(60, 130)">
+    <!-- Container Box -->
+    <rect width="200" height="490" rx="12" fill="url(#primaryCard)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="200" height="36" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <text x="100" y="23" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">1. INGRESS &amp; SECURITY</text>
+
+    <!-- Sub-card: Client SDK / App -->
+    <g transform="translate(15, 55)">
+      <rect width="170" height="95" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="15" y="28" fill="#F1F5F9" font-size="13" font-weight="600">Client Applications</text>
+      <text x="15" y="48" fill="#94A3B8" font-size="11">• OpenAI Python SDK</text>
+      <text x="15" y="66" fill="#94A3B8" font-size="11">• LangChain / LlamaIndex</text>
+      <text x="15" y="84" fill="#38BDF8" font-size="10" font-family="monospace">base_url: :8000/v1</text>
+    </g>
+
+    <!-- Sub-card: Virtual Key Auth -->
+    <g transform="translate(15, 170)">
+      <rect width="170" height="110" rx="8" fill="#1E293B" stroke="#0284C7" stroke-width="1.5"/>
+      <text x="15" y="26" fill="#38BDF8" font-size="12" font-weight="600">Virtual Key Auth</text>
+      <text x="15" y="46" fill="#CBD5E1" font-size="11">• Bearer <tspan fill="#F8FAFC" font-family="monospace">sk-gw-*</tspan></text>
+      <text x="15" y="64" fill="#94A3B8" font-size="11">• SHA-256 Hashed Lookup</text>
+      <text x="15" y="82" fill="#94A3B8" font-size="11">• RBAC &amp; Model Whitelist</text>
+      <text x="15" y="100" fill="#38BDF8" font-size="10">• Zero-leak of master keys</text>
+    </g>
+
+    <!-- Sub-card: Rate Limiter & Budget -->
+    <g transform="translate(15, 300)">
+      <rect width="170" height="110" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+      <text x="15" y="26" fill="#F59E0B" font-size="12" font-weight="600">Rate &amp; Budget Guard</text>
+      <text x="15" y="46" fill="#CBD5E1" font-size="11">• Token Bucket Algorithm</text>
+      <text x="15" y="64" fill="#94A3B8" font-size="11">• Configurable RPM / TPM</text>
+      <text x="15" y="82" fill="#94A3B8" font-size="11">• Monthly USD Budget Cap</text>
+      <text x="15" y="100" fill="#F59E0B" font-size="10">• 429 Retry-After Headers</text>
+    </g>
+
+    <!-- Sub-card: Telemetry & Tracing -->
+    <g transform="translate(15, 430)">
+      <rect width="170" height="45" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="85" y="22" fill="#94A3B8" font-size="10" text-anchor="middle">ContextVar Request ID</text>
+      <text x="85" y="36" fill="#64748B" font-size="9" font-family="monospace" text-anchor="middle">x-request-id: 8f9a2b...</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 2: TWO-PASS HIGH-THROUGHPUT CACHE -->
+  <g transform="translate(290, 130)">
+    <rect width="290" height="490" rx="12" fill="url(#primaryCard)" stroke="#38BDF8" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="290" height="36" rx="12" fill="#0C4A6E" stroke="#0284C7" stroke-width="1"/>
+    <text x="145" y="23" fill="#F0F9FF" font-size="13" font-weight="700" text-anchor="middle">2. TWO-PASS CACHE ENGINE</text>
+
+    <!-- Layer 1: Exact Match -->
+    <g transform="translate(15, 55)">
+      <rect width="260" height="150" rx="10" fill="#132338" stroke="#0284C7" stroke-width="1.5"/>
+      <rect x="15" y="15" width="80" height="20" rx="4" fill="#0284C7"/>
+      <text x="55" y="29" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle">TIER 1 CACHE</text>
+      <text x="105" y="30" fill="#E2E8F0" font-size="13" font-weight="600">Exact Hash Index</text>
+      
+      <text x="15" y="58" fill="#94A3B8" font-size="11">O(1) SHA-256 fingerprint over messages</text>
+      <text x="15" y="76" fill="#94A3B8" font-size="11">model + params + temperature + seed</text>
+
+      <rect x="15" y="92" width="230" height="44" rx="6" fill="#0B132B" stroke="#0369A1" stroke-width="1"/>
+      <text x="25" y="110" fill="#38BDF8" font-size="11" font-weight="600">HIT;EXACT</text>
+      <text x="95" y="110" fill="#E2E8F0" font-size="11">| Latency: <tspan fill="#34D399" font-weight="700">&lt;5 ms</tspan></text>
+      <text x="25" y="126" fill="#94A3B8" font-size="10">Token Cost: <tspan fill="#34D399" font-weight="700">$0.0000</tspan> (100% bypass)</text>
+    </g>
+
+    <!-- Down arrow from L1 to L2 -->
+    <g transform="translate(145, 215)">
+      <line x1="0" y1="0" x2="0" y2="25" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrowCyan)"/>
+      <rect x="10" y="3" width="70" height="18" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="45" y="16" fill="#94A3B8" font-size="9" text-anchor="middle">EXACT MISS</text>
+    </g>
+
+    <!-- Layer 2: Semantic Match -->
+    <g transform="translate(15, 250)">
+      <rect width="260" height="165" rx="10" fill="#132338" stroke="#10B981" stroke-width="1.5"/>
+      <rect x="15" y="15" width="95" height="20" rx="4" fill="#059669"/>
+      <text x="62" y="29" fill="#FFFFFF" font-size="10" font-weight="700" text-anchor="middle">TIER 2 SEMANTIC</text>
+      <text x="120" y="30" fill="#E2E8F0" font-size="13" font-weight="600">Cosine Match</text>
+      
+      <text x="15" y="58" fill="#94A3B8" font-size="11">Fast embedding of user's query turn</text>
+      <text x="15" y="76" fill="#94A3B8" font-size="11">Context-isolated (requires exact history)</text>
+      <text x="15" y="94" fill="#94A3B8" font-size="11">Similarity threshold: <tspan fill="#34D399" font-weight="700">cosine &gt; 0.92</tspan></text>
+
+      <rect x="15" y="108" width="230" height="44" rx="6" fill="#06281E" stroke="#059669" stroke-width="1"/>
+      <text x="25" y="126" fill="#34D399" font-size="11" font-weight="600">HIT;SEMANTIC</text>
+      <text x="115" y="126" fill="#E2E8F0" font-size="11">| Latency: <tspan fill="#34D399" font-weight="700">&lt;18 ms</tspan></text>
+      <text x="25" y="142" fill="#94A3B8" font-size="10">Rephrased prompts answered free</text>
+    </g>
+
+    <!-- Cache Miss Bypass -->
+    <g transform="translate(15, 430)">
+      <rect width="260" height="45" rx="6" fill="#0F172A" stroke="#EF4444" stroke-width="1"/>
+      <text x="25" y="22" fill="#EF4444" font-size="10" font-weight="700">SEMANTIC MISS</text>
+      <text x="120" y="22" fill="#E2E8F0" font-size="10">| Pass-through to upstream</text>
+      <text x="25" y="36" fill="#94A3B8" font-size="9">Async background insertion into cache</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 3: ROUTING & RELIABILITY LAYER -->
+  <g transform="translate(615, 130)">
+    <rect width="270" height="490" rx="12" fill="url(#primaryCard)" stroke="#6366F1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="270" height="36" rx="12" fill="#312E81" stroke="#4F46E5" stroke-width="1"/>
+    <text x="135" y="23" fill="#EEF2FF" font-size="13" font-weight="700" text-anchor="middle">3. ROUTING &amp; RELIABILITY</text>
+
+    <!-- Sub-card: Model Router -->
+    <g transform="translate(15, 55)">
+      <rect width="240" height="115" rx="8" fill="#1E293B" stroke="#6366F1" stroke-width="1"/>
+      <text x="15" y="26" fill="#818CF8" font-size="13" font-weight="600">Model Routing Engine</text>
+      <text x="15" y="48" fill="#CBD5E1" font-size="11">• Declarative <tspan fill="#F1F5F9" font-family="monospace">routing.yaml</tspan></text>
+      <text x="15" y="66" fill="#94A3B8" font-size="11">• Exact &amp; wildcard prefix match</text>
+      <text x="15" y="84" fill="#94A3B8" font-size="11">• Alias mappings (e.g. <tspan font-family="monospace">gpt-4o-mini</tspan>)</text>
+      <text x="15" y="102" fill="#A5B4FC" font-size="10">• Hot reload via <tspan font-family="monospace">POST /admin/reload</tspan></text>
+    </g>
+
+    <!-- Sub-card: Circuit Breaker & Failover -->
+    <g transform="translate(15, 185)">
+      <rect width="240" height="150" rx="8" fill="#1E293B" stroke="#EC4899" stroke-width="1.5"/>
+      <text x="15" y="26" fill="#F472B6" font-size="13" font-weight="600">Circuit Breaker &amp; Failover</text>
+      
+      <text x="15" y="48" fill="#94A3B8" font-size="11">• 401 / 404: Instant failover</text>
+      <text x="15" y="66" fill="#94A3B8" font-size="11">• 429 / 503: Exponential backoff</text>
+      <text x="15" y="84" fill="#94A3B8" font-size="11">• 2 consecutive 5xx: <tspan fill="#EF4444" font-weight="700">Trip breaker</tspan></text>
+      
+      <rect x="15" y="98" width="210" height="38" rx="6" fill="#2E1065" stroke="#9333EA" stroke-width="1"/>
+      <text x="25" y="115" fill="#E9D5FF" font-size="10" font-weight="600">Automated Target Failover:</text>
+      <text x="25" y="128" fill="#C084FC" font-size="9" font-family="monospace">OpenAI → Anthropic → Ollama</text>
+    </g>
+
+    <!-- Sub-card: Non-blocking SSE Streaming -->
+    <g transform="translate(15, 350)">
+      <rect width="240" height="125" rx="8" fill="#1E293B" stroke="#059669" stroke-width="1"/>
+      <text x="15" y="26" fill="#34D399" font-size="13" font-weight="600">Streaming Engine (SSE)</text>
+      <text x="15" y="48" fill="#CBD5E1" font-size="11">• True asynchronous generators</text>
+      <text x="15" y="66" fill="#94A3B8" font-size="11">• First-token latency &lt;100ms</text>
+      <text x="15" y="84" fill="#94A3B8" font-size="11">• Mid-stream drop detection</text>
+      <text x="15" y="102" fill="#34D399" font-size="10">• In-flight usage chunk parser</text>
+    </g>
+  </g>
+
+  <!-- COLUMN 4: UPSTREAMS & COST ACCOUNTING -->
+  <g transform="translate(915, 130)">
+    <rect width="225" height="490" rx="12" fill="url(#primaryCard)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="225" height="36" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+    <text x="112" y="23" fill="#E2E8F0" font-size="13" font-weight="600" text-anchor="middle">4. UPSTREAMS &amp; LEDGER</text>
+
+    <!-- Sub-card: Upstream Providers -->
+    <g transform="translate(15, 55)">
+      <rect width="195" height="150" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+      <text x="15" y="26" fill="#F1F5F9" font-size="12" font-weight="600">Upstream Endpoints</text>
+      <g transform="translate(15, 40)">
+        <circle cx="6" cy="6" r="4" fill="#10B981"/>
+        <text x="18" y="10" fill="#E2E8F0" font-size="11">OpenAI API</text>
+        <circle cx="6" cy="28" r="4" fill="#10B981"/>
+        <text x="18" y="32" fill="#E2E8F0" font-size="11">Anthropic Claude</text>
+        <circle cx="6" cy="50" r="4" fill="#10B981"/>
+        <text x="18" y="54" fill="#E2E8F0" font-size="11">NVIDIA NIM (Free)</text>
+        <circle cx="6" cy="72" r="4" fill="#10B981"/>
+        <text x="18" y="76" fill="#E2E8F0" font-size="11">Hugging Face</text>
+        <circle cx="6" cy="94" r="4" fill="#38BDF8"/>
+        <text x="18" y="98" fill="#38BDF8" font-size="11">Local Ollama / vLLM</text>
+      </g>
+    </g>
+
+    <!-- Sub-card: Token & Cost Ledger -->
+    <g transform="translate(15, 220)">
+      <rect width="195" height="150" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+      <text x="15" y="26" fill="#34D399" font-size="12" font-weight="600">Financial Cost Ledger</text>
+      <text x="15" y="48" fill="#CBD5E1" font-size="11">• Per-key token tracking</text>
+      <text x="15" y="66" fill="#CBD5E1" font-size="11">• Dynamic <tspan font-family="monospace">pricing.json</tspan></text>
+      <text x="15" y="84" fill="#94A3B8" font-size="11">• Net spend tally</text>
+      <text x="15" y="102" fill="#34D399" font-size="11" font-weight="600">• Cache savings metrics</text>
+
+      <rect x="15" y="112" width="165" height="26" rx="4" fill="#064E3B"/>
+      <text x="97" y="129" fill="#A7F3D0" font-size="10" font-weight="700" text-anchor="middle">UP TO 80% SAVINGS</text>
+    </g>
+
+    <!-- Sub-card: Admin Dashboard -->
+    <g transform="translate(15, 385)">
+      <rect width="195" height="90" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="24" fill="#F1F5F9" font-size="11" font-weight="600">Admin Telemetry UI</text>
+      <text x="15" y="44" fill="#94A3B8" font-size="10">• Real-time HTML dashboard</text>
+      <text x="15" y="60" fill="#94A3B8" font-size="10">• Prometheus metric exporter</text>
+      <text x="15" y="76" fill="#38BDF8" font-size="9" font-family="monospace">GET /admin/usage</text>
+    </g>
+  </g>
+
+  <!-- Footer Signature -->
+  <g transform="translate(60, 645)">
+    <text x="0" y="0" fill="#64748B" font-size="11">Engineered by Sai Yasaswini Majety | Production Architecture for Enterprise GenAI Workloads</text>
+    <text x="1080" y="0" fill="#475569" font-size="11" text-anchor="end">FastAPI • SQLite/Redis • Docker • Pytest</text>
+  </g>
+</svg>
